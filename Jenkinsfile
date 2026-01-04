@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'ashish2999/python-app-ec2'
-        DOCKER_TAG = '${BUILD_NUMBER}'
+        DOCKER_TAG = 'latest'
     }
 
     stages {
