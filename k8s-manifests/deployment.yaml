@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: ashish2999/python-app:replaceImageTag
+        image: ashish2999/python-app-ec2:latest
         ports:
         - containerPort: 5000
