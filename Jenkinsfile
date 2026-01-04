@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ashish2999/python-app-ec2'
-        DOCKER_TAG = 'latest'
+        DOCKER_IMAGE = "ashish2999/python-app-ec2"
+        DOCKER_TAG = "latest"
     }
 
     stages {
