@@ -7,6 +7,7 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout Code') {
             steps {
                 checkout scm
@@ -41,11 +42,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Update Deployment File') {
-            environment {
-                GIT_REPO_NAME = 'Basic-App-Ec2'
-                GIT_USER_NAME = 'DAshishReddy'
-            }
     }
 }
