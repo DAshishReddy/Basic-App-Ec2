@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ashish2999/python-app-ec2'
-        DOCKER_TAG = 'latest'
+        DOCKER_IMAGE = 'ashish2999/python-app-ec2:${BUILD_NUMBER}'
     }
 
     stages {
@@ -27,7 +26,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE:$DOCKER_TAG .'
+                sh 'docker build -t ${DOCKER_IMAGE} .'
             }
         }
 
@@ -37,7 +36,7 @@ pipeline {
                   credentialsId: 'dockerhub-creds',
                   url: 'https://index.docker.io/v1/'
                 ) {
-                    sh 'docker push $DOCKER_IMAGE:$DOCKER_TAG'
+                    sh 'docker push ${DOCKER_IMAGE}'
                 }
             }
         }
